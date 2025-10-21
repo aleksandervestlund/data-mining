@@ -7,7 +7,7 @@ from numpy import float64
 def hypertext_induced_topic_search(
     graph: Graph, delta: float = 1e-6
 ) -> tuple[dict[str, float64], dict[str, float64]]:
-    nodes: list[str] = list(graph.nodes())
+    nodes: list[str] = list(graph.nodes)
     matrix = nx.to_numpy_array(graph, nodelist=nodes)
     matrix_t = matrix.T
 

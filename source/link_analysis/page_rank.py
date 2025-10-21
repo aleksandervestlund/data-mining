@@ -5,7 +5,7 @@ from numpy import float64
 
 
 def page_rank_gaussian(graph: Graph) -> dict[str, float64]:
-    nodes = set(graph.nodes())
+    nodes = set(graph.nodes)
     n = len(nodes)
 
     matrix = nx.to_numpy_array(graph, nodelist=nodes)
@@ -26,7 +26,7 @@ def page_rank_gaussian(graph: Graph) -> dict[str, float64]:
 def page_rank_iterative(
     graph: Graph, epsilon: float = 1e-6
 ) -> dict[str, float64]:
-    nodes = set(graph.nodes())
+    nodes = set(graph.nodes)
     n = len(nodes)
 
     matrix = nx.to_numpy_array(graph, nodelist=nodes)
@@ -47,7 +47,7 @@ def page_rank_iterative(
 def page_rank_google(
     graph: Graph, beta: float = 0.9, epsilon: float = 1e-6
 ) -> dict[str, float64]:
-    nodes = set(graph.nodes())
+    nodes = set(graph.nodes)
     n = len(nodes)
 
     matrix = nx.to_numpy_array(graph, nodelist=nodes)
@@ -68,7 +68,7 @@ def page_rank_google(
 def page_rank_google_sparse(
     graph: Graph, beta: float = 0.9, epsilon: float = 1e-6
 ) -> dict[str, float64]:
-    nodes = list(graph.nodes())
+    nodes = list(graph.nodes)
     n = len(nodes)
 
     matrix = nx.to_numpy_array(graph, nodelist=nodes)

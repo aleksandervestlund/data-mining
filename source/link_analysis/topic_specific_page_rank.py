@@ -11,7 +11,7 @@ def topic_specific_page_rank_gaussian(
     topic_nodes: Set[str],
     beta: float = 0.9,
 ) -> dict[str, float64]:
-    nodes = list(graph.nodes())
+    nodes = list(graph.nodes)
     n = len(nodes)
 
     matrix = nx.to_numpy_array(graph, nodelist=nodes)
@@ -42,7 +42,7 @@ def topic_specific_page_rank_iterative(
     beta: float = 0.9,
     epsilon: float = 1e-6,
 ) -> dict[str, float64]:
-    nodes = list(graph.nodes())
+    nodes = list(graph.nodes)
     n = len(nodes)
 
     matrix = nx.to_numpy_array(graph, nodelist=nodes)
