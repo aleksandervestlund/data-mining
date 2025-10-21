@@ -2,6 +2,7 @@ from source.mining_data_streams.utils.buckets import Bucket, Buckets
 
 
 def dgim(data: int, n: int) -> int:
+    """Datar-Gionis-Indyk-Motwani."""
     if n == 0:
         return 0
 

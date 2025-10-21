@@ -14,6 +14,7 @@ def f(moment: int, n: int, c: int) -> int:
 def ams(
     stream: Sequence[int], moment: int, n_estimates: int, k_samples: int | None
 ) -> float:
+    """Alon-Matias-Szegedy."""
     if k_samples is None:
         k_samples = n_estimates
 
