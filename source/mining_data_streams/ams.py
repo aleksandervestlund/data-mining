@@ -2,6 +2,7 @@ import random
 from collections.abc import Sequence
 
 import numpy as np
+from numpy import float64
 
 from source.mining_data_streams.sample_fixed_size import sample_fixed_size
 
@@ -13,7 +14,7 @@ def f(moment: int, n: int, c: int) -> int:
 
 def ams(
     stream: Sequence[int], moment: int, n_estimates: int, k_samples: int | None
-) -> float:
+) -> float64:
     """Alon-Matias-Szegedy."""
     if k_samples is None:
         k_samples = n_estimates
@@ -32,4 +33,4 @@ def ams(
 
         counts.append(f(moment, n, c))
 
-    return float(np.mean(counts))
+    return np.mean(counts, dtype=float64)

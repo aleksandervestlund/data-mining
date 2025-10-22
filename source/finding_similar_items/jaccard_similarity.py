@@ -2,9 +2,9 @@ from typing import Any
 
 
 def _sim_set(set1: set[Any], set2: set[Any]) -> float:
-    intersection = set1.intersection(set2)
+    intersection = set1 & set2
 
-    if not (union := set1.union(set2)):
+    if not (union := set1 | set2):
         return 0.0
     return len(intersection) / len(union)
 

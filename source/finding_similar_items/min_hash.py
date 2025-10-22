@@ -1,12 +1,13 @@
 from collections.abc import Iterable, Sequence
 
 import numpy as np
+from numpy import float64
 
 
-def min_hash(set_: Iterable[int], permutation: Sequence[int]) -> int:
-    if not set_:
+def min_hash(items: Iterable[int], permutation: Sequence[int]) -> int:
+    if not items:
         raise ValueError()
-    return min(permutation[i] for i in set_)
+    return min(permutation[i] for i in items)
 
 
 def generate_signature_matrix(
@@ -30,7 +31,7 @@ def generate_signature_matrix(
     return signature_matrix
 
 
-def compute_similarities(row1: Sequence[int], row2: Sequence[int]) -> float:
+def compute_similarities(row1: Sequence[int], row2: Sequence[int]) -> float64:
     if len(row1) != len(row2):
         raise ValueError()
-    return float(np.mean(np.array(row1) == np.array(row2)))
+    return np.mean(np.array(row1) == np.array(row2))

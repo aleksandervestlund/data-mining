@@ -15,7 +15,7 @@ def count_frequent_items(items: Iterable[Any], c: float) -> list[Any]:
 
         counts[item] += 1
 
-        for k in counts:
+        for k in reversed(counts):
             if counts[k] < THRESHOLD:
                 counts.pop(k)
 

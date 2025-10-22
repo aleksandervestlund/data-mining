@@ -7,7 +7,7 @@ def sample_fixed_size(data: Sequence[Any], size: int) -> list[Any]:
     if (length := len(data)) <= size:
         return list(data)
 
-    sample: list[Any] = list(data[:size])
+    sample = list(data[:size])
     probability = size / length
 
     for element in data[size:]:

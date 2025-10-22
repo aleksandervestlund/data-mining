@@ -1,24 +1,10 @@
 from collections.abc import Iterable, Sequence
-from typing import Any
 
 import numpy as np
 
 from source.mining_data_streams.utils.generate_random_hash_functions import (
     generate_random_hash_functions,
 )
-
-
-def first_cut(
-    original_stream: Iterable[Any], new_stream: Iterable[Any], n_bits: int
-) -> list[Any]:
-    hash_function = generate_random_hash_functions(1, n_bits)[0]
-    array = [False] * n_bits
-
-    for bit in original_stream:
-        hash_ = hash_function(bit)
-        array[hash_] = True
-
-    return [elem for elem in new_stream if array[hash_function(elem)]]
 
 
 def bloom_filter(
