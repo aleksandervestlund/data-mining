@@ -1,13 +1,16 @@
 import math
 
 
-def euclidean(point1: tuple[float, ...], point2: tuple[float, ...]) -> float:
+Point = tuple[float, ...]
+
+
+def euclidean(point1: Point, point2: Point) -> float:
     if len(point1) != len(point2):
         raise ValueError("Points must have the same number of dimensions.")
     return math.sqrt(sum((a - b) ** 2 for a, b in zip(point1, point2)))
 
 
-def cosine(point1: tuple[float, ...], point2: tuple[float, ...]) -> float:
+def cosine(point1: Point, point2: Point) -> float:
     if len(point1) != len(point2):
         raise ValueError("Points must have the same number of dimensions.")
 

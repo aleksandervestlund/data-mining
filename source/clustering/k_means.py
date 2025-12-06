@@ -1,9 +1,6 @@
 from collections.abc import Iterable, Sequence
 
-from source.clustering.distance import euclidean
-
-
-Point = tuple[float, ...]
+from source.clustering.distance import Point, euclidean
 
 
 def k_means(
