@@ -1,6 +1,7 @@
 from collections.abc import Iterable, Sequence
 
-from source.clustering.distance import Point, euclidean
+from source.clustering.distance import euclidean
+from source.utils.types import Point
 
 
 def k_means(

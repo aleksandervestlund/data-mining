@@ -1,7 +1,6 @@
 import math
 
-
-Point = tuple[float, ...]
+from source.utils.types import Point
 
 
 def euclidean(point1: Point, point2: Point) -> float:
